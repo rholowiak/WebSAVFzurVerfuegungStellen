@@ -1,0 +1,179 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    height: 100vh;
+    margin: 0;
+    overflow: visible; /* Prevent scrolling */
+    padding: 0;
+    font-size: 20px;
+}
+form {
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f0f4f8;
+}
+form.styled-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* aligns with justify-content: left in body */
+    justify-content: flex-start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: #333;
+    background-color: #f0f4f8;
+    gap: 20px; /* spacing between form rows */
+    width: 100%;
+    max-width: 600px;
+}
+label {
+    display: inline-block;
+    width: 200px;
+    margin-top: 20px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 3em;
+    color: #2c3e50;
+    background-color: lightgreen;
+    border: 1px solid green;
+    border-radius: 15px; /* This makes the corners curved */
+    padding: 10px;
+    margin: 5px 0;
+}
+h2 {
+    font-size: 3em;
+    color: #2c3e50;
+    background-color: #f0f4f8;
+    padding: 10px;
+    margin: 5px 0;
+}
+p {
+    background-color: #f0f4f8;
+    font-size: 3em;
+    display: inline-block;
+    color: #555;
+    align-items: flex-start;
+    justify-content: left;
+    border: 1px solid grey;
+    border-radius: 15px; /* This makes the corners curved */
+    padding: 10px;
+    margin: 5px 0;
+}
+button.submit {
+    background-color: limegreen; /* Green */
+    color: white;
+    border: black solid 1px;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+button.submit:hover {
+    background-color: green;
+}
+
+button.reset {
+    background-color: dodgerblue; /* Blue */
+    color: white;
+    border: black solid 1px;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+button.reset:hover {
+    background-color: royalblue;
+}
+
+button.end {
+    background-color: red; /* Red */
+    color: white;
+    border: black solid 1px;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+button.end:hover {
+    background-color: firebrick;
+}
+
+button.backToForm {
+    background-color: dodgerblue; /* Blue */
+    color: white;
+    border: black solid 1px;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+button.backToForm:hover {
+    background-color: royalblue;
+}
+.processing-label {
+    color: blue;
+    font-size: 18px;
+}
+.message-text {
+    font-weight: bold;
+}
+.form-buttons {
+    display: flex;
+    justify-content: stretch;
+    margin-top: 5px;
+}
+.spacer {
+    width: 240px;
+}
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: self-start;
+    height: 100vh;
+    max-width: 90vw; /* Prevents content from overflowing horizontally */
+    box-sizing: border-box;
+    padding: 1rem;
+    text-align: left;
+    font-size: 7px;
+    line-height: 1px;
+}
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.progress-circle {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
