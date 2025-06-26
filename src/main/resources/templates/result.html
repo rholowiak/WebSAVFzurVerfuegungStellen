@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>FTP Result</title>
+  <link rel="stylesheet" type="text/css" href="/css/4styles.css">
+  <link rel="icon" href="/images/savf-icon.ico" type="image/x-icon">
 </head>
 <body>
-$END$
+<div>
+  <h1>FTP Process Result</h1>
+
+  <p th:if="${isSuccess}" style="color: green;">
+    Status: <span class="message-text" th:text="${statusSuccessful}"></span>
+  </p>
+
+  <p th:unless="${isSuccess}" style="color: red;">
+    Status: <span class="message-text" th:text="${statusFailed}"></span>
+  </p>
+</div>
+
+
+<div class="centered-container">
+  <div th:each="msg : ${messages}">
+    <h2>
+      <span class="processing-label">processing time </span>
+      <span class="processing-label" th:text="'[' + ${msg.formattedTimestamp()} + ']'"></span> ->
+      <span class="message-text" th:text="${msg.text}" th:style="'color:' + ${msg.color}"></span>
+    </h2>
+    <div th:if="${msg.showBackButton}">
+      <form action="/form" method="get">
+        <button type="submit" class="end">Process failed!</button>
+      </form>
+    </div>
+  </div>
+
+  <form class="styled-form">
+  <div class="form-buttons">
+    <button type="submit" class="backToForm" formaction="/form" formmethod="get">Back to Form</button>
+    <div style="width: 57px;"></div>
+  </div>
+
+  <div class="form-buttons">
+    <button type="submit" class="end" formaction="/end" formmethod="get">Exit form</button>
+    <div style="width: 83px;"></div>
+  </div>
+  </form>
+
+</div>
 </body>
 </html>

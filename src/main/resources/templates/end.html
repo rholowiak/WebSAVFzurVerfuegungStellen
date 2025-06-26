@@ -1,10 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Goodbye</title>
+    <link rel="stylesheet" type="text/css" href="/css/4styles.css">
+    <link rel="icon" href="/images/savf-icon.ico" type="image/x-icon">
+    <style>
+        .centered-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 300vh;
+            text-align: center;
+        }
+        h1 {
+            color: white;
+            font-size: 6em;
+            padding: 50px;
+            background-color: dodgerblue;
+            border: 1px solid blue;
+
+        }
+        p {
+            color: white;
+            font-size: 6em;
+            padding: 50px;
+            background-color: dodgerblue;
+            border: 1px solid blue;
+
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="centered-container">
+    <strong>
+        <h1>Thank you!</h1>
+        <p>Your session has ended. You may now close the browser tab.</p>
+    </strong>
+    <button class="endJava" onclick="endSession()">Press to end Java App</button>
+</div>
+
+<script>
+    function endSession() {
+        fetch('/shutdown', { method: 'POST' })
+            .then(response => {
+                if (response.ok) {
+                    alert('Java application is shutting down.');
+                } else {
+                    alert('Failed to shut down the application.');
+                }
+            });
+    }
+</script>
+
 </body>
 </html>

@@ -1,10 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>FTP Input Form</title>
+    <link rel="icon" href="/images/savf-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/css/4styles.css">
 </head>
 <body>
-$END$
+<h1>Input source path of SAVF and Pass to C:\infor folder</h1>
+
+
+<!-- First form -->
+<form action="/submit" method="post">
+    <label>Enter source path:</label>
+    <label>
+        <input type="text" name="sourcePath" />
+    </label><br/>
+    <div th:if="${error1}" th:text="${error1}" style="color: red;"></div>
+    <div th:if="${error2}" th:text="${error2}" style="color: blue;"></div>
+
+    <label>Enter USER:</label>
+    <label>
+        <input type="text" name="username" />
+    </label><br/>
+
+    <label>Enter PASSWORD:</label>
+    <label>
+        <input type="password" name="password" />
+    </label><br/>
+
+    <div class="form-buttons">
+        <button type="reset" class="reset">Reset</button>
+        <div class="spacer"></div>
+        <button type="submit" class="submit">Submit</button>
+    </div>
+</form>
+
+<!-- Second form -->
+<form action="/end" method="get">
+    <div class="form-buttons">
+        <button type="submit" class="end">Exit form</button>
+        <div class="spacer"></div>
+        <div style="width: 83px;"></div> <!-- Optional: match Submit button width -->
+    </div>
+</form>
+
+<div id="progress-container" style="display: none;">
+    <div class="progress-circle"></div>
+    <p>Processing...</p>
+</div>
+<script>
+    document.querySelector('form[action="/submit"]').addEventListener('submit', function () {
+        document.getElementById('progress-container').style.display = 'flex';
+    });
+</script>
+
 </body>
 </html>

@@ -31,6 +31,7 @@ form.styled-form {
     gap: 20px; /* spacing between form rows */
     width: 100%;
     max-width: 600px;
+    border: #f0f4f8;
 }
 label {
     display: inline-block;
@@ -106,6 +107,20 @@ button.end {
     border-radius: 15px;
 }
 button.end:hover {
+    background-color: firebrick;
+}
+button.endJava {
+    background-color: red; /* Red */
+    color: white;
+    border: black solid 1px;
+    padding: 20px 40px;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: xxx-large;
+}
+button.endJava:hover {
     background-color: firebrick;
 }
 
