@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>FTP Result</title>
-  <link rel="stylesheet" type="text/css" href="/css/4styles.css">
+  <link rel="stylesheet" type="text/css" href="/css/8styles.css">
   <link rel="icon" href="/images/savf-icon.ico" type="image/x-icon">
 </head>
 <body>
@@ -23,7 +23,7 @@
   <div th:each="msg : ${messages}">
     <h2>
       <span class="processing-label">processing time </span>
-      <span class="processing-label" th:text="'[' + ${msg.formattedTimestamp()} + ']'"></span> ->
+      <span class="processing-label" th:text="'[' + ${msg.formattedTimestamp()} + ' ms]'"></span> ->
       <span class="message-text" th:text="${msg.text}" th:style="'color:' + ${msg.color}"></span>
     </h2>
     <div th:if="${msg.showBackButton}">
@@ -44,7 +44,17 @@
     <div style="width: 83px;"></div>
   </div>
   </form>
-
 </div>
+
+<fieldset th:if="${isSuccess}">
+  <legend>Message to customer</legend>
+  <h3 class="textBox">Sehr geehrter Herr XXXXX,<br><br>
+    wir haben das Savefile <b th:text="${sourcePathToFileName + '.SAVF'}"></b> als Anhang zu diesem Supportfall bereitgestellt.<br><br>
+    XXXXXXX<br><br>
+    Mit freundlichem Gruß,<br>
+    Rafal Holowiak | Product Support Analyst
+  </h3>
+</fieldset>
+
 </body>
 </html>

@@ -59,10 +59,21 @@ h2 {
     padding: 10px;
     margin: 5px 0;
 }
+h3 {
+    font-size: 3em;
+    display-inside: ruby;
+    display: compact;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+    flex-direction: row;
+}
 p {
     background-color: #f0f4f8;
     font-size: 3em;
-    display: inline-block;
+    display: flex;
     color: #555;
     align-items: flex-start;
     justify-content: left;
@@ -191,4 +202,31 @@ button.backToForm:hover {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+.message-box {
+    padding: 15px;
+    background-color: #fff;
+    border-left: 4px solid #007BFF;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    white-space: normal;
+}
+fieldset {
+    font-family: Arial, sans-serif;
+    font-size: 6px;
+    border: 1px solid #333;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: end;
+    align-content: center;
+    text-align: center;
+    width: 42%;
+    margin: 10px;
+}
+legend {
+    font-weight: bold;
+    padding: 10px;
+    font-size: 18px;
+    justify-content: center;
+    text-align: center;
 }

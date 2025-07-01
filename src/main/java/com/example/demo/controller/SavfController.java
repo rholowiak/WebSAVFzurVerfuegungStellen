@@ -45,6 +45,8 @@ public class SavfController {
 
         try {
             List<Message> messages = ftpService.useCmdAndFTP(sourcePath, username, password);
+            String sourcePathToFileName = sourcePath.substring(sourcePath.indexOf("/") + 1); //added to controller
+
             model.addAttribute("messages", messages);
             if (!FTPReply.isPositiveCompletion(runCmdAndFTP.getReplyCode())) {
                 model.addAttribute("statusFailed", "Process failed! Check VPN connection");
@@ -53,6 +55,7 @@ public class SavfController {
             if (FTPReply.isPositiveCompletion(runCmdAndFTP.getReplyCode())) {
                 model.addAttribute("statusSuccessful", "Download completed");
                 model.addAttribute("isSuccess", true); // ✅ Add this flag
+                model.addAttribute("sourcePathToFileName", sourcePathToFileName); //added to controller
             }
             return "result";
         } catch (Exception e) {
